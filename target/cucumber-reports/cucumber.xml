@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="9.812">
+<testcase classname="Homepage scenarios" name="I verify regex for cucumber scenario" time="9.261">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given I have a fruit "apple" whose price is 100.............................undefined
+And I have a vegetable "tomato" whose price is 200..........................skipped
+When I sell it in the shop..................................................skipped
+Then I get double the price 200.............................................skipped
+]]></failure>
+</testcase>
+</testsuite>
