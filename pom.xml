@@ -241,7 +241,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
+                        <include>**/RerunFailed.java</include>
                     </includes>
                 </configuration>
                 <executions>
