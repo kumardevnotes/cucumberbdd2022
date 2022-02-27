@@ -78,6 +78,9 @@ public class Hooks {
             scenario.attach(data, "image/png", scenario.getName());
             driver.quit();
         }
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 }

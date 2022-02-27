@@ -1,8 +1,8 @@
 @Test123
 Feature: Homepage scenarios
 
-  @smoketest123
-  Scenario: Verify ViewAll button on the homepage
+  @testz
+  Scenario: rerun  - Verify ViewAll button on the homepage
     Given I launch the app '<shoppingApp>'
     And I find the homepage loaded
     When I click on ViewAll button
@@ -11,6 +11,17 @@ Feature: Homepage scenarios
     Examples:
     |shoppingApp|
     |Flipkart|
+
+  @notests
+  Scenario: normal run - Verify ViewAll button on the homepage
+    Given I launch the app '<shoppingApp>'
+    And I find the homepage loaded
+    When I click on ViewAll button
+    Then I verify product listing page loaded
+
+    Examples:
+      |shoppingApp|
+      |Flipkart|
 
   @smoke112
   Scenario Outline: Verify search functionality

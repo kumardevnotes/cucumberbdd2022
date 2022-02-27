@@ -100,11 +100,11 @@ public class StepDefinitions extends Utility {
         CartPage.verifyCartAfterDeletion(cartCount);
     }
 
-    @Given("^I have a fruit||vegatable \"([^\"]*)\" whose price is (\\d+)$")
-    public void i_have_a_fruit_something_whose_price_is_(String fruit, int price) throws Throwable {
-        System.out.println("fruit or veg: " + fruit);
-        System.out.println("original price: " + price);
-    }
+//    @Given("^I have a fruit||vegatable \"([^\"]*)\" whose price is (\\d+)$")
+//    public void i_have_a_fruit_something_whose_price_is_(String fruit, int price) throws Throwable {
+//        System.out.println("fruit or veg: " + fruit);
+//        System.out.println("original price: " + price);
+//    }
 
     @When("^I sell it in the shop$")
     public void i_sell_it_in_the_shop() throws Throwable {
