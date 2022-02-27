@@ -1,9 +1,0 @@
-com\page\objects\HomePage.class
-com\page\objects\ProductsListingPage.class
-com\page\objects\CartPage.class
-com\utilities\Utility$1.class
-com\utilities\Utility.class
-com\utilities\AutomationBase.class
-com\utilities\ExcelParser$1.class
-com\page\objects\PageObjects.class
-com\utilities\ExcelParser.class

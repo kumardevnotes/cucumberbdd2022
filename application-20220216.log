@@ -1,9 +1,0 @@
-2022-02-16 19:55:52.205 [main] INFO  com.utilities.Utility - Caught an exception at returnElement() org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=98.0.4758.102)
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'LIN66007684', ip: '192.168.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [db99030e9332231d1fa00d958dcf658d, findElement {using=xpath, value=(//span[.='Login']/../../../..//button)[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.80 (7f0488e8ba0d8..., userDataDir: C:\Users\thoudi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:60273}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60273/devtoo..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: db99030e9332231d1fa00d958dcf658d

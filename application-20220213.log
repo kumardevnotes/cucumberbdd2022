@@ -1,7 +1,0 @@
-2022-02-13 18:44:14.645 [main] INFO  com.utilities.Utility - Flipkart is launched without issues
-2022-02-13 18:44:14.906 [main] INFO  com.utilities.Utility - Flipkart homepage is launched without issues
-2022-02-13 18:44:15.217 [main] INFO  com.utilities.Utility - Clicked on ViewAll button on the homepage
-2022-02-13 18:44:15.368 [main] INFO  com.utilities.Utility - Product list page verified
-2022-02-13 18:44:15.783 [main] INFO  com.utilities.Utility - Searched an item
-2022-02-13 18:44:16.843 [main] INFO  com.utilities.Utility - Products loaded based on the search
-2022-02-13 18:44:16.934 [main] INFO  com.utilities.Utility - Filter label verified on the page
