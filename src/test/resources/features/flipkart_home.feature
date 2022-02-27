@@ -70,21 +70,6 @@ Feature: Homepage scenarios
     |item|cartCount|
     |REDMI|2|
 
-  @smoke
-  Scenario Outline: duplicate  - Verify Delete from Cart functionality
-    Given I launch the app '<shoppingApp>'
-    And I find the homepage loaded
-    When I click on ViewAll button
-    Then I verify product listing page loaded
-    When I search for an '<item>' from search field
-    And I add two products to the cart
-    Then I find the cart count is '<cartCount>'
-    When I delete one product from the cart
-    Then I verify cart count is decreased to 1
-    Examples:
-      |item|cartCount|
-      |REDMI|2|
-
     @demo
     Scenario: I verify regex for cucumber scenario
       Given I have a fruit "apple" whose price is 100
