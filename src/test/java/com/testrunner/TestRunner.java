@@ -9,15 +9,15 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = ".//src//test//resources//features//flipkart_home.feature",
-glue = { "com.stepdefinitions" }, 
+        glue = {"com.stepdefinitions"},
 
-monochrome = true,
-plugin={"pretty",
-		"junit:target/cucumber-reports/cucumber.xml",
-		"html:target/HTMLReports/report.html",
-		"json:target/cucumber-reports/cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-tags = "@demo")
+        monochrome = true,
+        plugin = {"pretty",
+                "junit:target/cucumber-reports/cucumber.xml",
+                "html:target/HTMLReports/report.html",
+                "json:target/cucumber-reports/cucumber.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        tags = "@smoketest123")
 public class TestRunner {
-	
+
 }

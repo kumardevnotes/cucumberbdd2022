@@ -3,6 +3,8 @@ package com.stepdefinitions;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,63 +20,64 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 
-	static WebDriver driver;
+    static WebDriver driver;
 
-	@Before
-	public void before_launchBrowser(Scenario scenario) {
-		if(System.getProperty("browser") == null) {
-			//String path = System.getProperty("user.dir");
-			//System.setProperty("webdriver.chrome.driver", path+"\\src\\test\\resources\\chromedriver.exe");  
-			
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		}
-		else {
-			switch (System.getProperty("browser")) {
-			case "Chrome":
-				String path = System.getProperty("user.dir");
-				System.setProperty("webdriver.chrome.driver", path+"\\src\\test\\resources\\chromedriver.exe");    
-				//WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				break;
-			case "Edge":
-				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
-				break;
-			case "IE":
-				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
-				break;
-			case "Firefox":
-				WebDriverManager.firefoxdriver().setup();
-				driver = new EdgeDriver();
-				break;
-			default:
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				break;
-			}
-		}
-		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		initPageDrivers(driver);
-		driver.manage().window().maximize();
-	}
+    @Before
+    public void before_launchBrowser(Scenario scenario) {
+        if (System.getProperty("browser") == null) {
+            //String path = System.getProperty("user.dir");
+            //System.setProperty("webdriver.chrome.driver", path+"\\src\\test\\resources\\chromedriver.exe");
 
-	public static void initPageDrivers(WebDriver driver) {
-		new AutomationBase(driver);
-		new PageObjects(driver);
-		new Utility(driver);
-		new CartPage(driver);
-		new HomePage(driver);
-		new ProductsListingPage(driver);
-	}
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else {
+            switch (System.getProperty("browser")) {
+                case "Chrome":
+                    String path = System.getProperty("user.dir");
+                    System.setProperty("webdriver.chrome.driver", path + "\\src\\test\\resources\\chromedriver.exe");
+                    //WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case "Edge":
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+                case "IE":
+                    WebDriverManager.iedriver().setup();
+                    driver = new InternetExplorerDriver();
+                    break;
+                case "Firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+            }
+        }
 
-	@After
-	public void after_quitBrowser(Scenario scenario) {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        initPageDrivers(driver);
+        driver.manage().window().maximize();
+    }
+
+    public static void initPageDrivers(WebDriver driver) {
+        new AutomationBase(driver);
+        new PageObjects(driver);
+        new Utility(driver);
+        new CartPage(driver);
+        new HomePage(driver);
+        new ProductsListingPage(driver);
+    }
+
+    @After
+    public void after_quitBrowser(Scenario scenario) {
+        if (scenario.isFailed() && driver != null) {
+            byte[] data = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(data, "image/png", scenario.getName());
+            driver.quit();
+        }
+    }
 
 }
