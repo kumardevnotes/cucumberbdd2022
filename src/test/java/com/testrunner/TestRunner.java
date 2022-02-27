@@ -17,7 +17,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
                 "html:target/HTMLReports/report.html",
                 "json:target/cucumber-reports/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@smoketest123")
+        tags = "@notests")
 public class TestRunner {
 
 }
