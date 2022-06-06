@@ -1,5 +1,6 @@
 package com.stepdefinitions;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -7,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -28,8 +30,13 @@ public class Hooks {
             //String path = System.getProperty("user.dir");
             //System.setProperty("webdriver.chrome.driver", path+"\\src\\test\\resources\\chromedriver.exe");
 
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            //WebDriverManager.chromedriver().setup();
+            //driver = new ChromeDriver();
+//            import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
+            ChromeOptions options =  new ChromeOptions();
+            options.setBinary(new File("/usr/bin/google-chrome"));
+            driver  = new ChromeDriver(options);
         } else {
             switch (System.getProperty("browser")) {
                 case "Chrome":
